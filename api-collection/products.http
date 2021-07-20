@@ -1,0 +1,54 @@
+@baseUrl=http://localhost:3000/api
+
+@resourceName=products
+
+# Products 
+
+# @name getAll
+GET {{baseUrl}}/{{resourceName}}
+
+###
+
+# @name filterProducts
+GET {{baseUrl}}/{{resourceName}}?color=pink
+
+###
+
+# @name pagination
+GET {{baseUrl}}/{{resourceName}}?_page=1&_limit=3
+
+###
+
+# @name addNew
+POST {{baseUrl}}/{{resourceName}}
+Content-Type: application/json
+
+{
+    "categoryId": "df7b7e52-c347-468c-a8c0-0f83365310d2",
+    "name": "Ergonomic Plastic Keyboard",
+    "color": "plum",
+    "price": 50,
+    "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+    "thumbnailUrl": "http://placeimg.com/400/400"
+}
+
+###
+
+# @name update
+PATCH {{baseUrl}}/{{resourceName}}/VKMhGYd
+Content-Type: application/json
+
+{
+    
+    "name": "Ergonomic Plastic Keyboard",
+    "color": "pink",
+    "price": 88
+   
+}
+
+###
+
+# @name remove
+DELETE {{baseUrl}}/{{resourceName}}/2
+Content-Type: application/json
+
